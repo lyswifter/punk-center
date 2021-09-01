@@ -25,7 +25,7 @@ func main() {
 	go func() {
 		AllIps = readline("ips")
 
-		ticker := time.NewTicker(5 * time.Second)
+		ticker := time.NewTicker(30 * time.Second)
 
 		for {
 			select {
