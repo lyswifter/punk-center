@@ -80,7 +80,7 @@ func handleClientPemAPI(r *gin.Engine) {
 		c.JSON(200, gin.H{
 			"status":  "Ok",
 			"code":    200,
-			"message": fmt.Sprintf("wal: %s from: %s saved!", stat.Wal, stat.IP),
+			"message": fmt.Sprintf("wal: %s from: %s saved", stat.Wal, stat.IP),
 		})
 	})
 }
@@ -98,7 +98,7 @@ func handleClientStateAPI(r *gin.Engine) {
 		c.JSON(200, gin.H{
 			"status":  "Ok",
 			"code":    200,
-			"message": "",
+			"message": stat.Statue,
 		})
 	})
 }
@@ -125,7 +125,7 @@ func handleClientResultAPI(r *gin.Engine) {
 		c.JSON(200, gin.H{
 			"status":  "Ok",
 			"code":    200,
-			"message": "",
+			"message": punk.TokenID,
 		})
 	})
 }
