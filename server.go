@@ -33,6 +33,13 @@ func handleClientPemAPI(r *gin.Engine) {
 
 		// log.Printf("Client(%s): wal:%s info: %s", stat.IP, stat.Wal, stat.WalPriKey)
 
+		if stat.IP == "" {
+			c.JSON(500, gin.H{
+				"status":  "Err",
+				"message": fmt.Sprintf("get an empty ip: %v", c.ClientIP()),
+			})
+		}
+
 		filename := "identity.pem"
 
 		repodir, err := homedir.Expand(repoPath)
