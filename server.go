@@ -38,6 +38,7 @@ func handleClientPemAPI(r *gin.Engine) {
 				"status":  "Err",
 				"message": fmt.Sprintf("get an empty ip: %v", c.ClientIP()),
 			})
+			return
 		}
 
 		filename := "identity.pem"
