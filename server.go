@@ -77,6 +77,10 @@ func handleClientPemAPI(r *gin.Engine) {
 			return
 		}
 
+		lock.Lock()
+		received = append(received, stat.IP)
+		lock.Unlock()
+
 		c.JSON(200, gin.H{
 			"status":  "Ok",
 			"code":    200,
